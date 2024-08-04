@@ -20,7 +20,7 @@ describe('SignUp Controller', () => {
         expect(httpResponse.body).toEqual(new MissingParamsErrors('name'))
     })
     test('shold return 400 if no email is provided', () => {
-        const sut = new SignUpController()
+        const sut = makeSut()
         const httpRequest = {
             body: {
                 name: 'any_name',
@@ -33,7 +33,7 @@ describe('SignUp Controller', () => {
         expect(httpResponse.body).toEqual(new MissingParamsErrors('email'))
     })
     test('shold return 400 if no password is provided', () => {
-        const sut = new SignUpController()
+        const sut = makeSut()
         const httpRequest = {
             body: {
                 name: 'any_name',
@@ -46,7 +46,7 @@ describe('SignUp Controller', () => {
         expect(httpResponse.body).toEqual(new MissingParamsErrors('password'))
     })
     test('shold return 400 if no password Confirmation is provided', () => {
-        const sut = new SignUpController()
+        const sut = makeSut()
         const httpRequest = {
             body: {
                 name: 'any_name',
